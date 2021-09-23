@@ -37,6 +37,18 @@ Note that `r create_bcstats_app()` generates a basic app.R file with these modul
 
 ### Installation
 
+This package relies on the bcstatslinks package, so that needs to be installed first. To install packages from github, use the remotes package
+
+```{r}
+
+install.packages("remotes")
+remotes::install_github("bcgov/bcstatslinks")
+remotes::install_github("bcgov/bcsapps")
+
+library(bcsapps)
+```
+
+
 ### Usage
 
 Use this package in combination with the [bcgovr](https://github.com/bcgov/bcgovr) package. 
@@ -48,16 +60,18 @@ Use this package in combination with the [bcgovr](https://github.com/bcgov/bcgov
 
 Note, to avoid typing in your email several times it is recommended to add an option to your `r .Rprofile`. You can easily edit your `r .Rprofile` with `r usethis::edit_r_profile()` and then add in the line options("bcgovr.coc.email" = "your.email@gov.bc.ca". This will edit (and create if necessary) the  `r .Rprofile` file under C:/Users/<username>. If you have settings in `r .Rprofile` on C:/Program Files/R/ they will continue to be used at startup as well. 
 
+Once your github project is initialized, add in the citz and bcstats topics by clicking the settings "gear" icon next to About on the right panel on GitHub.
 
-#### Example
+To change the name of your "master" branch to "main":
 
-This is a basic example which shows you how to solve a common problem:
+1. Go to Settings -> Branches on GitHub and edit the name of your default branch
+2. In RStudio click Pull on the Git tab to pull in the new branch
+3. Click on the drop down that says "master" and switch to the branch (REMOTE:ORIGIN) main
 
-```{r example}
-## basic example code
-```
 
 ### Project Status
+
+Experimental
 
 ### Getting Help or Reporting an Issue
 
