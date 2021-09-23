@@ -10,7 +10,7 @@
 #'
 #' @export
 #'
-create_bcstats_app <- function(path = ".", coc_email = bcgovr::get_coc_email(), licence = "apache2"){
+create_bcstats_app <- function(path = ".", coc_email = bcgovr:::get_coc_email(), licence = "apache2"){
 
   if(is.null(coc_email)) {
 
