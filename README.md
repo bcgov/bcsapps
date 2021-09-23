@@ -1,0 +1,123 @@
+[![img](https://img.shields.io/badge/Lifecycle-Experimental-339999)](https://github.com/bcgov/repomountie/blob/master/doc/lifecycle-badges.md)
+
+# bcsapps
+
+This package was developed to simplify shiny app development at BCStats.
+It uses `bcgovr::create_bcgov_project()` to set up an RProject with all
+the files necessary to comply with bcgov standards and then also adds in
+the files needed for a basic BCStats shiny app.
+
+Using this package for initializing shiny apps will also ensure
+consistency across BCStats’ apps
+
+### Features
+
+#### Functions
+
+`create_bcstats_app()` Create a new shiny web application project with
+folders and files to meet both the bcgov standards (utilizing
+[bcgovr](https://github.com/bcgov/bcgovr)) and the BCStats standards for
+shiny apps.
+
+#### Modules
+
+`bcsHeaderUI()` and `bcsHeaderServer()` Add the standard BCStats header
+to your app. An appname is required in `bcsHeaderUI()` for the title to
+be included in the header. To exclude the drop down list of links to
+other BCStats apps (kept up to date in
+[bcstatslinks](https://github.com/bcgov/bcstatslinks)), use
+`bcsHeaderServer(links = FALSE)` the default is `TRUE`.
+
+`bcsFooterUI()` and `bcsFooterServer` Add the standard BCStats footer to
+your app.
+
+Note that `create_bcstats_app()` generates a basic app.R file with these
+modules already included.
+
+### Installation
+
+This package relies on the bcstatslinks package, so that needs to be
+installed first. To install packages from github, use the remotes
+package
+
+``` r
+install.packages("remotes")
+remotes::install_github("bcgov/bcstatslinks")
+remotes::install_github("bcgov/bcsapps")
+
+library(bcsapps)
+```
+
+### Usage
+
+Use this package in combination with the
+[bcgovr](https://github.com/bcgov/bcgovr) package.
+
+1.  To start, open RStudio and ensure the working directory is the
+    folder you wish to set up the RProject in (Alternately, you can
+    provide a path to `create_bcstats_app()`)
+2.  Run
+    `create_bcstats_app(coc_email = "<insert email address to be used in the code of conduct file>")`
+3.  Run
+    `bcgovr::use_bcgov_git(coc_email = "<insert email address to be used in the code of conduct file>")`
+    to initialize git version control
+4.  Run
+    `bcgovr::use_bcgov_github(coc_email = "<insert email address to be used in the code of conduct file>")`
+    to open a bcgov GitHub repository
+
+Note, to avoid typing in your email several times it is recommended to
+add an option to your `.Rprofile`. You can easily edit your `.Rprofile`
+with `usethis::edit_r_profile()` and then add in the line
+options(“bcgovr.coc.email” = “<your.email@gov.bc.ca>”. This will edit
+(and create if necessary) the `.Rprofile` file under
+C:/Users/<username>. If you have settings in `.Rprofile` on C:/Program
+Files/R/ they will continue to be used at startup as well.
+
+Once your github project is initialized, add in the citz and bcstats
+topics by clicking the settings “gear” icon next to About on the right
+panel on GitHub.
+
+To change the name of your “master” branch to “main”:
+
+1.  Go to Settings -> Branches on GitHub and edit the name of your
+    default branch
+2.  In RStudio click Pull on the Git tab to pull in the new branch
+3.  Click on the drop down that says “master” and switch to the branch
+    (REMOTE:ORIGIN) main
+
+### Project Status
+
+Experimental
+
+### Getting Help or Reporting an Issue
+
+To report bugs/issues/feature requests, please file an
+[issue](https://github.com/bcgov/bcsapps/issues/).
+
+### How to Contribute
+
+If you would like to contribute to the package, please see our
+[CONTRIBUTING](CONTRIBUTING.md) guidelines.
+
+Please note that this project is released with a [Contributor Code of
+Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree
+to abide by its terms.
+
+### License
+
+    Copyright 2021 Province of British Columbia
+
+    Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and limitations under the License.
+
+------------------------------------------------------------------------
+
+*This project was created using the
+[bcgovr](https://github.com/bcgov/bcgovr) package.*

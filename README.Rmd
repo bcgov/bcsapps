@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 
 # bcsapps
 
-This package was developed to simplify shiny app development at BCStats. It uses `r bcgovr::create_bcgov_project()` to set up an RProject with all the files necessary to comply with bcgov standards and then also adds in the files needed for a basic BCStats shiny app.
+This package was developed to simplify shiny app development at BCStats. It uses ` bcgovr::create_bcgov_project()` to set up an RProject with all the files necessary to comply with bcgov standards and then also adds in the files needed for a basic BCStats shiny app.
 
 Using this package for initializing shiny apps will also ensure consistency across BCStats' apps
 
@@ -24,22 +24,22 @@ Using this package for initializing shiny apps will also ensure consistency acro
 
 #### Functions
 
-`r create_bcstats_app()` Create a new shiny web application project with folders and files to meet both the bcgov standards (utilizing [bcgovr](https://github.com/bcgov/bcgovr)) and the BCStats standards for shiny apps.
+` create_bcstats_app()` Create a new shiny web application project with folders and files to meet both the bcgov standards (utilizing [bcgovr](https://github.com/bcgov/bcgovr)) and the BCStats standards for shiny apps.
 
 
 #### Modules
 
-`r bcsHeaderUI()` and `r bcsHeaderServer()` Add the standard BCStats header to your app. An appname is required in `r bcsHeaderUI()` for the title to be included in the header. To exclude the drop down list of links to other BCStats apps (kept up to date in [bcstatslinks](https://github.com/bcgov/bcstatslinks)), use `r bcsHeaderServer(links = FALSE)` the default is `r TRUE`.
+` bcsHeaderUI()` and ` bcsHeaderServer()` Add the standard BCStats header to your app. An appname is required in ` bcsHeaderUI()` for the title to be included in the header. To exclude the drop down list of links to other BCStats apps (kept up to date in [bcstatslinks](https://github.com/bcgov/bcstatslinks)), use ` bcsHeaderServer(links = FALSE)` the default is ` TRUE`.
 
-`r bcsFooterUI()` and `r bcsFooterServer` Add the standard BCStats footer to your app.
+` bcsFooterUI()` and ` bcsFooterServer` Add the standard BCStats footer to your app.
 
-Note that `r create_bcstats_app()` generates a basic app.R file with these modules already included.
+Note that ` create_bcstats_app()` generates a basic app.R file with these modules already included.
 
 ### Installation
 
 This package relies on the bcstatslinks package, so that needs to be installed first. To install packages from github, use the remotes package
 
-```{r}
+```{r, eval=FALSE}
 
 install.packages("remotes")
 remotes::install_github("bcgov/bcstatslinks")
@@ -58,7 +58,7 @@ Use this package in combination with the [bcgovr](https://github.com/bcgov/bcgov
 3. Run `bcgovr::use_bcgov_git(coc_email = "<insert email address to be used in the code of conduct file>")` to initialize git version control
 4. Run `bcgovr::use_bcgov_github(coc_email = "<insert email address to be used in the code of conduct file>")` to open a bcgov GitHub repository
 
-Note, to avoid typing in your email several times it is recommended to add an option to your `r .Rprofile`. You can easily edit your `r .Rprofile` with `r usethis::edit_r_profile()` and then add in the line options("bcgovr.coc.email" = "your.email@gov.bc.ca". This will edit (and create if necessary) the  `r .Rprofile` file under C:/Users/<username>. If you have settings in `r .Rprofile` on C:/Program Files/R/ they will continue to be used at startup as well. 
+Note, to avoid typing in your email several times it is recommended to add an option to your ` .Rprofile`. You can easily edit your ` .Rprofile` with ` usethis::edit_r_profile()` and then add in the line options("bcgovr.coc.email" = "your.email@gov.bc.ca". This will edit (and create if necessary) the  ` .Rprofile` file under C:/Users/<username>. If you have settings in ` .Rprofile` on C:/Program Files/R/ they will continue to be used at startup as well. 
 
 Once your github project is initialized, add in the citz and bcstats topics by clicking the settings "gear" icon next to About on the right panel on GitHub.
 
