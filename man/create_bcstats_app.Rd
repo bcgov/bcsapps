@@ -4,12 +4,16 @@
 \alias{create_bcstats_app}
 \title{Create an app project}
 \usage{
-create_bcstats_app(path = ".", contact_email = NULL, licence = "apache2")
+create_bcstats_app(
+  path = ".",
+  coc_email = bcgovr::get_coc_email(),
+  licence = "apache2"
+)
 }
 \arguments{
 \item{path}{Path to the directory in which to initialize the project. Default "." - your current working directory.}
 
-\item{contact_email}{Contact email address(es) for the Code of Conduct.}
+\item{coc_email}{Contact email address(es) for the Code of Conduct.}
 
 \item{licence}{Which licence to apply? Default is Apache 2.0 ("apache2"). Use "cc-by" for Creative Commons Attribution 4.0}
 }

@@ -3,14 +3,14 @@
 #' Create an app project in the BCStats style, providing all the files needed to get started
 #'
 #' @param path Path to the directory in which to initialize the project. Default "." - your current working directory.
-#' @param contact_email Contact email address(es) for the Code of Conduct.
+#' @param coc_email Contact email address(es) for the Code of Conduct.
 #' @param licence Which licence to apply? Default is Apache 2.0 ("apache2"). Use "cc-by" for Creative Commons Attribution 4.0
 #'
 #' @return NULL
 #'
 #' @export
 #'
-create_bcstats_app <- function(path = ".", coc_email = NULL, licence = "apache2"){
+create_bcstats_app <- function(path = ".", coc_email = bcgovr::get_coc_email(), licence = "apache2"){
 
   if(is.null(coc_email)) {
 
