@@ -1,7 +1,9 @@
-ui <- shiny::fluidPage({
-  fluidRow(
+ui <- function(req) {
+  shiny::fluidPage(
     theme = "bootstrap.css",
     HTML("<html lang='en'>"),
+    fluidRow(
+
 
     ## Replace appname with the title that will appear in the header
     bcsapps::bcsHeaderUI(id = 'header', appname = "Replace with app title"),
@@ -14,7 +16,7 @@ ui <- shiny::fluidPage({
 
     bcsapps::bcsFooterUI(id = 'footer')
   )
-})
+)}
 
 server <- function(input, output) {
 
