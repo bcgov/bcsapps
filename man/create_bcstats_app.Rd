@@ -6,7 +6,7 @@
 \usage{
 create_bcstats_app(
   path = ".",
-  coc_email = bcgovr::get_coc_email(),
+  coc_email = bcgovr:::get_coc_email(),
   licence = "apache2"
 )
 }
