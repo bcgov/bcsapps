@@ -36,15 +36,20 @@ modules already included.
 
 ### Installation
 
-This package relies on the bcstatslinks package, so that needs to be
-installed first. To install packages from github, use the remotes
-package
+This package relies on the bcgovr and bcstatslinks packages, so they
+need to be installed first. To install packages from github, use the
+remotes package
 
 ``` r
+## install dependencies
 install.packages("remotes")
+remotes::install_github("bcgov/bcgovr")
 remotes::install_github("bcgov/bcstatslinks")
+
+## install package
 remotes::install_github("bcgov/bcsapps")
 
+## load package
 library(bcsapps)
 ```
 
