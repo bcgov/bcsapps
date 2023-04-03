@@ -1,6 +1,6 @@
 ui <- function(req) {
   shiny::fluidPage(
-    theme = "bootstrap.css",
+    theme = "styles.css",
     HTML("<html lang='en'>"),
     fluidRow(
 
