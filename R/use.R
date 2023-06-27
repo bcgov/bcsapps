@@ -26,7 +26,7 @@ use_bcstats_logo <- function(){
 
 use_bcstats_css <- function(){
 
-  fonts <- c("bootstrap.css")
+  fonts <- c("style.css")
 
   purrr::walk(fonts, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
                                      file.path(usethis::proj_get(), "app", "www", .x), overwrite = TRUE))
