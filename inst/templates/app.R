@@ -20,7 +20,7 @@ ui <- function(req) {
 
 
     ## Replace appname with the title that will appear in the header
-    bcsapps::bcsHeaderUI(id = 'header', appname = "Replace with app title"),
+    bcsapps::bcsHeaderUI(id = 'header', appname = "Replace with app title", github = "Replace with github URL or NULL"),
 
     column(width = 12,
            style = "margin-top:100px",

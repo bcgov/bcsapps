@@ -21,7 +21,7 @@
 #'
 #' @return a UI element
 #' @export
-bcsHeaderUI <- function(id, appname) {
+bcsHeaderUI <- function(id, appname, github = NULL) {
 
   ns <- shiny::NS(id)
 
@@ -48,7 +48,10 @@ bcsHeaderUI <- function(id, appname) {
 
                                  ## MODULE CODE FOR LINK LIST
                                  htmltools::tags$div(class = "link_list_div",
-                                                     shiny::uiOutput(ns('links_yn')))
+                                                     shiny::uiOutput(ns('links_yn'))),
+                                 if(!is.null(github)) tags$a(href = github, icon("github", "fa-lg"), style = "color:white")
+
+
                         )
             )
     )
