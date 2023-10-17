@@ -18,6 +18,7 @@
 #'
 #' @param id character
 #' @param appname character
+#' @param github character url to github repo or NULL
 #'
 #' @return a UI element
 #' @export
@@ -49,7 +50,7 @@ bcsHeaderUI <- function(id, appname, github = NULL) {
                                  ## MODULE CODE FOR LINK LIST
                                  htmltools::tags$div(class = "link_list_div",
                                                      shiny::uiOutput(ns('links_yn'))),
-                                 if(!is.null(github)) tags$a(href = github, icon("github", "fa-lg"), style = "color:white")
+                                 if(!is.null(github)) htmltools::tags$a(href = github, shiny::icon("github", "fa-lg"), style = "color:white")
 
 
                         )

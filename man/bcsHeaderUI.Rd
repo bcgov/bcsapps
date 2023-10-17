@@ -4,12 +4,14 @@
 \alias{bcsHeaderUI}
 \title{Module UI to for BCStats header}
 \usage{
-bcsHeaderUI(id, appname)
+bcsHeaderUI(id, appname, github = NULL)
 }
 \arguments{
 \item{id}{character}
 
 \item{appname}{character}
+
+\item{github}{character url to github repo or NULL}
 }
 \value{
 a UI element
