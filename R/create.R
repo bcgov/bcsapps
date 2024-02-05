@@ -40,12 +40,10 @@ create_bcstats_app <- function(path = ".", coc_email = bcgovr:::get_coc_email(),
                                coc_email = coc_email,
                                dir_struct = dirs)
 
+  use_bcstats_app()
+  use_bcstats_global()
+  use_bcstats_css()
   use_bcstats_fonts()
   use_bcstats_logo()
-  use_bcstats_css()
-  use_bcstats_global()
-  use_bcstats_app()
-
-
 
 }
