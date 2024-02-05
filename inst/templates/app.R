@@ -22,6 +22,8 @@ ui <- function(req) {
     ## Replace appname with the title that will appear in the header
     bcsapps::bcsHeaderUI(id = 'header', appname = "Replace with app title", github = "Replace with github URL or NULL"),
 
+    tags$head(tags$link(rel = "shortcut icon", href = "favicon.png")), ## to add BCGov favicon
+
     column(width = 12,
            style = "margin-top:100px",
 

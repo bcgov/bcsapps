@@ -30,7 +30,7 @@ use_bcstats_fonts <- function(){
 
 use_bcstats_logo <- function(){
 
-  fonts <- c("bcstats_logo_rev.png", "favicon.ico")
+  fonts <- c("bcstats_logo_rev.png", "favicon.png")
 
   purrr::walk(fonts, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
                                      file.path(usethis::proj_get(), "app", "www", .x), overwrite = TRUE))
