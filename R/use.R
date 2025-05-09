@@ -42,9 +42,11 @@ use_bcstats_logo <- function(){
 
 use_bcstats_css <- function(){
 
-  fonts <- c("styles.css")
+  files <- c("styles.css",
+             "BC_Sans.css",
+             "variables.css")
 
-  purrr::walk(fonts, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
+  purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
                                      file.path(usethis::proj_get(), "app", "www", .x), overwrite = TRUE))
 
 }
