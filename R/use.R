@@ -17,22 +17,24 @@
 
 use_bcstats_fonts <- function(){
 
-  fonts <- c("BCSans-Bold.woff", "BCSans-Bold.woff2",
-            "BCSans-BoldItalic.woff", "BCSans-BoldItalic.woff2",
-            "BCSans-Italic.woff", "BCSans-Italic.woff2",
-            "BCSans-Regular.woff", "BCSans-Regular.woff2")
+  files <- c("BCSans-Regular.woff", "BCSans-Regular.woff2",
+             "BCSans-Italic.woff", "BCSans-Italic.woff2",
+             "BCSans-Bold.woff", "BCSans-Bold.woff2",
+             "BCSans-BoldItalic.woff", "BCSans-BoldItalic.woff2",
+             "BCSans-Light.woff", "BCSans-Light.woff2",
+             "BCSans-LightItalic.woff", "BCSans-LightItalic.woff2")
 
-  purrr::walk(fonts, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
-                                     file.path(usethis::proj_get(), "app", "www", .x), overwrite = TRUE))
+  purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
+                                     file.path(usethis::proj_get(), "app", "www", "fonts", .x), overwrite = TRUE))
 
 }
 
 
 use_bcstats_logo <- function(){
 
-  fonts <- c("bcstats_logo_rev.png", "favicon.png")
+  files <- c("bcstats_logo_rev.png", "favicon.png")
 
-  purrr::walk(fonts, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
+  purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
                                      file.path(usethis::proj_get(), "app", "www", .x), overwrite = TRUE))
 
 }
@@ -50,9 +52,9 @@ use_bcstats_css <- function(){
 
 use_bcstats_global <- function(){
 
-  fonts <- c("global.R", "functions.R")
+  files <- c("global.R", "functions.R")
 
-  purrr::walk(fonts, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
+  purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
                                      file.path(usethis::proj_get(), "app", "R", .x), overwrite = TRUE))
 
 }
@@ -60,9 +62,9 @@ use_bcstats_global <- function(){
 
 use_bcstats_app <- function(){
 
-  fonts <- c("app.R")
+  files <- c("app.R")
 
-  purrr::walk(fonts, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
+  purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
                                      file.path(usethis::proj_get(), "app", .x), overwrite = TRUE))
 
 }

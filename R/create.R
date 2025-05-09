@@ -33,7 +33,7 @@ create_bcstats_app <- function(path = ".", coc_email = bcgovr:::get_coc_email(),
     coc <- readline("email =  ")
   }
 
-  dirs <- c("app/", "app/www/", "app/R/")
+  dirs <- c("app/", "app/www/", "app/www/fonts/", "app/R/")
 
   bcgovr::create_bcgov_project(path = path,
                                licence = licence,
