@@ -22,15 +22,17 @@ library(ggplot2)    ## for plots
 library(plotly)     ## for interactive plots
 library(DT)         ## for tables
 
-## boolean for whether running global.R directly or if running via app.R
-## this is really helpful in development for file paths as the root folder
-## differs depending on whether the code is run via app.R or directly
+## boolean for whether running locally or on shinyapps.io
 is_local = Sys.getenv('SHINY_PORT') == ""
 
 
 ## Add code that you want to run before your app launches
 
 ### e.g., reading in data
-## use is_local in file paths as exampled below
+## filepath breakdown:
+## when running global.R directly or via app.R the working directory changes e.g., "project" to "project/app"
+## to correct for this, use here::here which is always the project root folder i.e, "project"
+## then you need to use is_local in the file paths because on shinyapps.io the root folder is the "app" folder
+##  when not is_local the path will be "app/./data.Rds" where the "." means to stay in the current folder
 ## data = readRDS(here::here(ifelse(is_local, 'app', '.'), "data.Rds"))
 
