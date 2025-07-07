@@ -21,6 +21,12 @@ library(lubridate)  ## for dates
 library(ggplot2)    ## for plots
 library(plotly)     ## for interactive plots
 library(DT)         ## for tables
+library(reactable)  ## for more complex tables
+
+## change to TRUE if you are including GA tracking code in your app
+## to do this, update the config.yml file and run generate_ga_tracking_code.R
+## the script will add google-analytics.html file to the www folder
+google_tracking <- FALSE
 
 ## boolean for whether running locally or on shinyapps.io
 is_local = Sys.getenv('SHINY_PORT') == ""

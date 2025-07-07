@@ -1,0 +1,3 @@
+default:
+  ga_tracking_id: "replace with GA tracking code"
+  ga_page_title: "replace with page title"

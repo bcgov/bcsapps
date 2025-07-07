@@ -22,7 +22,8 @@ ui <- function(req) {
       shiny::tags$link(rel = "stylesheet", type = "text/css", href = "BC_Sans.css"),  ## set up BC Sans fonts
       shiny::tags$link(rel = "stylesheet", type = "text/css", href = "variables.css"),## bcgov design tokens
       shiny::tags$link(rel = "stylesheet", type = "text/css", href = "styles.css"),   ## custom styles
-      shiny::tags$link(rel = "shortcut icon", href = "favicon.png")  ## add BCGov favicon
+      shiny::tags$link(rel = "shortcut icon", href = "favicon.png"),  ## add BCGov favicon
+      if(google_tracking){  htmltools::includeHTML("www/google-analytics.html") },  ## to add GA tracking code (see global.R for more details)
       ),
     ## Replace appname with the title that will appear in the header
     ## Use mobilename to display a different title on mobile browsers (useful if appname title is very long)

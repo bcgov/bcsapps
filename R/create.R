@@ -45,5 +45,6 @@ create_bcstats_app <- function(path = ".", coc_email = bcgovr:::get_coc_email(),
   use_bcstats_css()
   use_bcstats_fonts()
   use_bcstats_logo()
+  use_bcstats_ga()
 
 }

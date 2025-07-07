@@ -71,4 +71,12 @@ use_bcstats_app <- function(){
 
 }
 
+use_bcstats_ga <- function(){
+
+  files <- c("generate_ga_tracking_code.R", "config.yml")
+
+  purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
+                                     file.path(usethis::proj_get(), .x), overwrite = TRUE))
+
+}
 
