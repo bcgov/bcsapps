@@ -25,7 +25,8 @@ ui <- function(req) {
       shiny::tags$link(rel = "shortcut icon", href = "favicon.png")  ## add BCGov favicon
       ),
     ## Replace appname with the title that will appear in the header
-    bcsapps::bcsHeaderUI(id = 'header', appname = "Replace with app title", github = "Replace with github URL or NULL"),
+    ## Use mobilename to display a different title on mobile browsers (useful if appname title is very long)
+    bcsapps::bcsHeaderUI(id = 'header', appname = "Replace with app title", mobilename = NULL, github = "Replace with github URL or NULL"),
 
     shiny::column(width = 12,
                   style = "margin-top:100px",

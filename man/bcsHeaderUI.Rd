@@ -4,12 +4,14 @@
 \alias{bcsHeaderUI}
 \title{Module UI to for BCStats header}
 \usage{
-bcsHeaderUI(id, appname, github = NULL)
+bcsHeaderUI(id, appname, mobilename = NULL, github = NULL)
 }
 \arguments{
 \item{id}{character}
 
 \item{appname}{character}
+
+\item{mobilename}{character - optional app title to display on mobile devices}
 
 \item{github}{character url to github repo or NULL}
 }

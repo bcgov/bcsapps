@@ -65,6 +65,21 @@ body, h1, h2, h3, h4, h5, h6 {
 
 /* CSS that is specific to your app */
 
+
+/* =====================
+   Banner formatting
+   ===================== */
+
+/* to display a different header based on screen width */
+/* when screen width > 600px show desktop-title else show mobile-title */
+span.desktop-title { display: flex; }
+span.mobile-title { display: none; }
+
+@media (max-width: 600px) {
+  span.desktop-title { display: none; }
+  span.mobile-title { display: flex; }
+}
+
 /* Required for the link list in bcsheader */
 #header-links-linkList > div > div {
   min-width: 280px;
