@@ -78,5 +78,8 @@ use_bcstats_ga <- function(){
   purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
                                      file.path(usethis::proj_get(), .x), overwrite = TRUE))
 
+  ## add config.yml and google-analytics.html to gitignore
+  usethis::write_union(usethis::proj_path(".gitignore"), c("config.yml", "*google-analytics.html"))
+
 }
 
