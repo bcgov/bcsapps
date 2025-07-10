@@ -25,7 +25,7 @@ use_bcstats_fonts <- function(){
              "BCSans-LightItalic.woff", "BCSans-LightItalic.woff2")
 
   purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
-                                     file.path(usethis::proj_get(), "app", "www", "fonts", .x), overwrite = TRUE))
+                                     usethis::proj_path("app", "www", "fonts", .x), overwrite = TRUE))
 
 }
 
@@ -35,7 +35,7 @@ use_bcstats_logo <- function(){
   files <- c("bcstats_logo_rev.png", "favicon.png")
 
   purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
-                                     file.path(usethis::proj_get(), "app", "www", .x), overwrite = TRUE))
+                                     usethis::proj_path("app", "www", .x), overwrite = TRUE))
 
 }
 
@@ -47,7 +47,7 @@ use_bcstats_css <- function(){
              "variables.css")
 
   purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
-                                     file.path(usethis::proj_get(), "app", "www", .x), overwrite = TRUE))
+                                     usethis::proj_path("app", "www", .x), overwrite = TRUE))
 
 }
 
@@ -57,7 +57,7 @@ use_bcstats_global <- function(){
   files <- c("global.R", "functions.R")
 
   purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
-                                     file.path(usethis::proj_get(), "app", "R", .x), overwrite = TRUE))
+                                     usethis::proj_path("app", "R", .x), overwrite = TRUE))
 
 }
 
@@ -67,7 +67,7 @@ use_bcstats_app <- function(){
   files <- c("app.R")
 
   purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
-                                     file.path(usethis::proj_get(), "app", .x), overwrite = TRUE))
+                                     usethis::proj_path("app", .x), overwrite = TRUE))
 
 }
 
@@ -76,7 +76,7 @@ use_bcstats_ga <- function(){
   files <- c("generate_ga_tracking_code.R", "config.yml")
 
   purrr::walk(files, ~ fs::file_copy(path = file.path(system.file("templates", package = "bcsapps"), .x),
-                                     file.path(usethis::proj_get(), .x), overwrite = TRUE))
+                                     usethis::proj_path(.x), overwrite = TRUE))
 
   ## add config.yml and google-analytics.html to gitignore
   usethis::write_union(usethis::proj_path(".gitignore"), c("config.yml", "*google-analytics.html"))
