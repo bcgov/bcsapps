@@ -50,8 +50,7 @@ bcsHeaderUI <- function(id, appname, mobilename = NULL, github = NULL) {
               src = "bcstats_logo_rev.png",
               title = "BC Stats",
               height = "80px",
-              alt = "British Columbia - BC Stats"),
-            onclick="gtag"),
+              alt = "British Columbia - BC Stats")),
 
           ## APP TITLE
           shiny::h1(id = "app_title",
