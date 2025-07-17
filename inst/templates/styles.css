@@ -1,90 +1,90 @@
-@font-face{
-font-family: BCSans;
-font-style: normal;
-src: url('BCSans-Regular.woff2') format('woff2'), /* Optimized for very modern browsers */ 
-url('BCSans-Regular.woff') format('woff'); /* Modern Browsers */
-}
-@font-face{
-font-family: BCSans;
-font-style: italic;
-src: url('BCSans-Italic.woff2') format('woff2'), /* Optimized for very modern browsers */ 
-url('BCSans-Italic.woff') format('woff'); /* Modern Browsers */
-}
-@font-face{
-font-family: BCSans;
-font-weight: 700;
-src: url('BCSans-Bold.woff2') format('woff2'), /* Optimized for very modern browsers */ 
-url('BCSans-Bold.woff') format('woff'); /* Modern Browsers */
-}
-@font-face{
-font-family: BCSans;
-font-style: italic;
-font-weight: 700;
-src: url('BCSans-BoldItalic.woff2') format('woff2'), /* Optimized for very modern browsers */
-url('BCSans-BoldItalic.woff') format('woff'); /* Modern Browsers */
+
+/*** TYPOGRAPHY ***/
+/* =====================
+   Body Text
+   ===================== */
+
+/* Regular Body Text */
+body {
+  font: var(--typography-regular-body);
 }
 
-@media screen and (min-width: 300px) and (max-width: 499px) {
-  h1 {
-    font-size: 1.0em;
-    visibility: visible;
-  }
-  
-  h2 {
-	font-size: 18px;
-	visibility: visible;
-  }
+/* Bold Body Text */
+b, strong {
+  font: var(--typography-bold-body);
 }
 
-@media screen and (min-width: 500px) and (max-width: 899px) {
-  h1 {
-    font-size: calc(9px + 2.2vw);
-    visibility: visible;
-  }
-  
-  h2 {
-	font-size: calc(11px + 1.5vw);
-	visibility: visible;
-  }
+/* Italic Body Text */
+i, em {
+  font: var(--typography-italic-body);
 }
 
-@media screen and (min-width: 900px) {
-  h1 {
-    font-size: 2.0em;
-    visibility: visible;
-  }
-  
-  h2 {
-	font-size: 1.2em;
-	visibility: visible;
-  }
+/* =====================
+   Headings (Bold by default)
+   ===================== */
+h1 { font: var(--typography-bold-h1); }
+h2 { font: var(--typography-bold-h2); }
+h3 { font: var(--typography-bold-h3); }
+h4 { font: var(--typography-bold-h4); }
+h5 { font: var(--typography-bold-h5); }
+h6 { font: var(--typography-bold-h6); }
+
+/* =====================
+   Italic tags inside headings
+   ===================== */
+h1 i, h1 em { font: var(--typography-italic-h1); }
+h2 i, h2 em { font: var(--typography-italic-h2); }
+h3 i, h3 em { font: var(--typography-italic-h3); }
+h4 i, h4 em { font: var(--typography-italic-h4); }
+h5 i, h5 em { font: var(--typography-italic-h5); }
+h6 i, h6 em { font: var(--typography-italic-h6); }
+
+/* =====================
+   Alternate Classes for Regular Headings
+   ===================== */
+.regular-h1 { font: var(--typography-regular-h1); }
+.regular-h2 { font: var(--typography-regular-h2); }
+.regular-h3 { font: var(--typography-regular-h3); }
+.regular-h4 { font: var(--typography-regular-h4); }
+.regular-h5 { font: var(--typography-regular-h5); }
+.regular-h6 { font: var(--typography-regular-h6); }
+
+/* =====================
+   Primary font color
+   ===================== */
+body, h1, h2, h3, h4, h5, h6 {
+  color: var(--typography-color-primary);
 }
 
-h2 {
-	font-weight: 700;
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
+/*** OTHER ELEMENTS ***/
+
+/* Use the design tokens in variables.css to set other defaults */
+
+
+/*** CUSTOM CSS ***/
+
+/* CSS that is specific to your app */
+
+
+/* =====================
+   Banner formatting
+   ===================== */
+
+/* to display a different header based on screen width */
+/* when screen width > 600px show desktop-title else show mobile-title */
+span.desktop-title { display: flex; }
+span.mobile-title { display: none; }
+
+@media (max-width: 600px) {
+  span.desktop-title { display: none; }
+  span.mobile-title { display: flex; }
 }
 
-h3 {
-	font-size: 18px;
-	visibility: visible;
-	font-weight: 700;
-	margin-top: 0.4em;
-	margin-bottom: 0.4em
+/* Required for the link list in bcsheader */
+#header-links-linkList > div > div {
+  min-width: 280px;
 }
 
-h4 {
-	font-size: 14px;
-	visibility: visible;
-	font-weight: 700;
-	margin-top: 0.25em;
-	margin-bottom: 0.25em
-}
-
-html, body, h1, h2, h3, h4, h5, h6 {
-  font-family: BCSans;
-}
 
 
 

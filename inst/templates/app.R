@@ -13,26 +13,41 @@
 # limitations under the License.
 
 ui <- function(req) {
-  shiny::fluidPage(
-    theme = "styles.css",
-    HTML("<html lang='en'>"),
-    fluidRow(
+  ## choose one of the options below:
+  ## for basic page use the first line, for dashboard-style page use the second line
+  bslib::page_fluid(shiny::fluidRow(
+  #htmltools::tagList(
 
-
+    shiny::tags$head(
+      shiny::tags$link(rel = "stylesheet", type = "text/css", href = "BC_Sans.css"),  ## set up BC Sans fonts
+      shiny::tags$link(rel = "stylesheet", type = "text/css", href = "variables.css"),## bcgov design tokens
+      shiny::tags$link(rel = "stylesheet", type = "text/css", href = "styles.css"),   ## custom styles
+      shiny::tags$link(rel = "shortcut icon", href = "favicon.png"),  ## add BCGov favicon
+      if(google_tracking){  htmltools::includeHTML("www/google-analytics.html") },  ## to add GA tracking code (see global.R for more details)
+      ),
     ## Replace appname with the title that will appear in the header
-    bcsapps::bcsHeaderUI(id = 'header', appname = "Replace with app title", github = "Replace with github URL or NULL"),
+    ## Use mobilename to display a different title on mobile browsers (useful if appname title is very long)
+    bcsapps::bcsHeaderUI(id = 'header', appname = "Replace with app title", mobilename = NULL, github = "Replace with github URL or NULL"),
 
-    tags$head(tags$link(rel = "shortcut icon", href = "favicon.png")), ## to add BCGov favicon
+    shiny::column(width = 12,
+                  style = "margin-top:100px",
+                  ## for dashboard-style page use one of the following:
+                  # bslib::page_sidebar( "Add elements to include in the app here" ),
+                  # bslib::page_navbar( bslib::nav_panel("Page1","Add elements to include in the app here") ),
 
-    column(width = 12,
-           style = "margin-top:100px",
 
-           "Add elements to include in the app here"
-           ),
+                  "Add elements to include in the app here"
+
+
+    ),
 
     bcsapps::bcsFooterUI(id = 'footer')
-  )
-)}
+
+## choose one of the options below:
+## for basic page use the first line, for dashboard-style page use the second line
+  ))
+ # )
+}
 
 server <- function(input, output) {
 

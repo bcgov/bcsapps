@@ -18,11 +18,12 @@
 #'
 #' @param id character
 #' @param appname character
+#' @param mobilename character - optional app title to display on mobile devices
 #' @param github character url to github repo or NULL
 #'
 #' @return a UI element
 #' @export
-bcsHeaderUI <- function(id, appname, github = NULL) {
+bcsHeaderUI <- function(id, appname, mobilename = NULL, github = NULL) {
 
   ns <- shiny::NS(id)
 
@@ -34,27 +35,39 @@ bcsHeaderUI <- function(id, appname, github = NULL) {
     htmltools::tags$head(htmltools::tags$style(htmltools::HTML('#app_title {font-weight:400; color:white; margin: 5px 5px 0 18px;}'))),
     htmltools::tags$head(htmltools::tags$style(htmltools::HTML('.link_list_div {margin-left:auto; margin-right:0;}'))),
 
-    shiny::column( id = "header_col",
-            width = 12,
-            htmltools::tags$header(class="header",
-                                   htmltools::tags$div(class="banner",
-                                                       htmltools::a(href= "https://www2.gov.bc.ca/gov/content/data/about-data-management/bc-stats",
-                                                                    htmltools::img(src = "bcstats_logo_rev.png",
-                                                                                   title = "BC Stats",
-                                                                                   height = "80px",
-                                                                                   alt = "British Columbia - BC Stats"),
-                                                                    onclick="gtag"),
+    shiny::column(
+      id = "header_col",
+      width = 12,
+      htmltools::tags$header(
+        class="header",
+        htmltools::tags$div(
+          class="banner",
 
-                                                       shiny::h1(id = "app_title", appname),
+          ## BC STATS LOGO
+          htmltools::a(
+            href= "https://www2.gov.bc.ca/gov/content/data/about-data-management/bc-stats",
+            htmltools::img(
+              src = "bcstats_logo_rev.png",
+              title = "BC Stats",
+              height = "80px",
+              alt = "British Columbia - BC Stats")),
 
-                                 ## MODULE CODE FOR LINK LIST
-                                 htmltools::tags$div(class = "link_list_div",
-                                                     shiny::uiOutput(ns('links_yn'))),
-                                 if(!is.null(github)) htmltools::tags$a(href = github, shiny::icon("github", "fa-lg"), style = "color:white")
+          ## APP TITLE
+          shiny::h1(id = "app_title",
+                    htmltools::tagList(
+                      htmltools::tags$span(class = "desktop-title", appname),
+                      ## optional smaller title if viewed on mobile
+                      if(!is.null(mobilename))  htmltools::tags$span(class = "mobile-title", mobilename))),
 
+          ## MODULE CODE FOR LINK LIST
+          htmltools::tags$div(
+            class = "link_list_div",
+            shiny::uiOutput(ns('links_yn'))),
 
-                        )
-            )
+          ## GITHUB LINK
+          if(!is.null(github)) htmltools::tags$a(href = github, shiny::icon("github", "fa-lg"), style = "color:white")
+        )
+      )
     )
   )
 }

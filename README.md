@@ -90,6 +90,15 @@ To change the name of your “master” branch to “main”:
 3.  Click on the drop down that says “master” and switch to the branch
     (REMOTE:ORIGIN) main
 
+### Resources
+
+Basic styles have been setup to align with the (BC Government
+design-system)\[<https://www2.gov.bc.ca/gov/content/digital/design-system>\].
+
+-   fonts.css and the font files come from
+    <https://github.com/bcgov/bc-sans>
+-   variables.css comes from <https://github.com/bcgov/design-system>
+
 ### Project Status
 
 Experimental

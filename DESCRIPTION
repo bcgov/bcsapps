@@ -1,6 +1,6 @@
 Package: bcsapps
 Title: Create a shiny app project using BCStats standards
-Version: 0.0.0
+Version: 0.1.0
 Authors@R: 
     person(given = "Stephanie",
            family = "Yurchak",
@@ -21,6 +21,6 @@ Imports:
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 URL: https://github.com/bcgov/bcsapps
 BugReports: https://github.com/bcgov/bcsapps/issues
